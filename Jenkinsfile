@@ -7,13 +7,13 @@ pipeline{
     stages{
         stage("Git Checkout"){
             steps{
-                git credentialsId: 'd60190d7-b182-4f05-9f7c-f1defae5b9fc', url: 'https://github.com/ps774/Automation.git'
+                git credentialsId: 'd60190d7-b182-4f05-9f7c-f1defae5b9fc', url: 'https://github.com/ps774/demo-java.git'
             }
         }
         stage("Maven Build"){
             steps{
                 sh "mvn clean package"
-                sh "mv target/*.war target/myweb.war"
+                sh "mv target/*.war target/myweb2.war"
             }
         }
         stage("deploy-dev"){
